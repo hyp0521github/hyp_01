@@ -29,12 +29,12 @@
       //   ctx.fillRect(100, 100, 75, 75);
       // 绘制一条实线
       // 首先，将画笔定位到起点坐标处
-      //   ctx.moveTo(50, 50);
-      //   ctx.lineTo(100, 50);
-      //   ctx.strokeStyle = "blue"; //线条的颜色
-      //   ctx.lineWidth = "1"; //线条的宽度
-      //   // 最后画线条
-      //   ctx.stroke();
+      ctx.moveTo(50, 50);
+      ctx.lineTo(100, 50);
+      ctx.strokeStyle = "blue"; //线条的颜色
+      ctx.lineWidth = "1"; //线条的宽度
+      // 最后画线条
+      ctx.stroke();
       //   ctx.moveTo(30, 50);//第一条线段端点的坐标
       //   // 因为是画折现所以拐2次
       //   ctx.lineTo(100, 65);//折点的坐标
@@ -64,11 +64,11 @@
       //   //以左顶角为主 向四周画图
       //   ctx.strokeRect(80, 10, 100, 100);
 
-      //   //   描边又实心的矩形图
-      //   //   1.先画一个边框矩形，里面再加一个实心矩形
-      //   ctx.lineWidth = 10;
-      //   ctx.strokeRect(200, 10, 100, 100);
-      //   ctx.fillRect(200, 10, 100, 100);
+      // //   描边又实心的矩形图
+      // //   1.先画一个边框矩形，里面再加一个实心矩形
+      // ctx.lineWidth = 10;
+      // ctx.strokeRect(200, 10, 100, 100);
+      // ctx.fillRect(200, 10, 100, 100);
 
       //   //   2.rect()先画一个矩形，再用fill填充
       //   ctx.rect(320, 10, 100, 100);
@@ -91,18 +91,18 @@
 
       // 线性渐变的实现
       // 1.竖着渐变 左上角到右上角的渐变
-      ctx.beginPath();
+      // ctx.beginPath();
       // 里面的值 左上角坐标x，y，右上角坐标x，y
-      const jb = ctx.createLinearGradient(100, 100, 300, 100);
-      jb.addColorStop(0, "red");
-      jb.addColorStop(0.5, "blue");
-      jb.addColorStop(1, "yellow");
+      // const jb = ctx.createLinearGradient(100, 100, 300, 100);
+      // jb.addColorStop(0, "red");
+      // jb.addColorStop(0.5, "blue");
+      // jb.addColorStop(1, "yellow");
       //   设置颜色宽度形状
-      ctx.strokeStyle = jb;
-      ctx.lineWidth = 100;
-      ctx.moveTo(100, 100);
-      ctx.lineTo(300, 100);
-      ctx.stroke();
+      // ctx.strokeStyle = jb;
+      // ctx.lineWidth = 100;
+      // ctx.moveTo(100, 100);
+      // ctx.lineTo(300, 100);
+      // ctx.stroke();
     </script>
   </body>
 </html>
