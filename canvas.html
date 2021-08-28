@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #myCanvas {
+        margin: 100px 600px;
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="600" height="600"></canvas>
+    <script>
+      // 第一步匹配到canvas对象
+      const c = document.getElementById("myCanvas");
+      // 第二步 获取canvas的上下环境
+      const ctx = c.getContext("2d");
+      //   // 绘制一个红色的矩形
+      //   ctx.fillStyle = "red";
+      //   //   fillRect方法是绘制矩形 圆形 字符 参数：绘制矩形的左上角x坐标，y坐标，x方向长度，y方向长度
+      //   ctx.fillRect(100, 100, 75, 75);
+      // 绘制一条实线
+      // 首先，将画笔定位到起点坐标处
+      //   ctx.moveTo(50, 50);
+      //   ctx.lineTo(100, 50);
+      //   ctx.strokeStyle = "blue"; //线条的颜色
+      //   ctx.lineWidth = "1"; //线条的宽度
+      //   // 最后画线条
+      //   ctx.stroke();
+      //   ctx.moveTo(30, 50);//第一条线段端点的坐标
+      //   // 因为是画折现所以拐2次
+      //   ctx.lineTo(100, 65);//折点的坐标
+      //   ctx.lineTo(30, 80); //另一条线段端点的坐标
+      //   //指定线段端点的形状————：round圆形；butt默认；square正方形；
+      //   ctx.lineCap = "round";
+      //   //指定折现点的形状———— ：round圆形；miter默认；bevel截取一部分；
+      //   ctx.lineJoin = "round";
+      //   ctx.strokeStyle = "blue";
+      //   ctx.lineWidth = "5";
+      //   ctx.stroke();
+      //   //   绘制第二个图形需要加下面这一句
+      //   ctx.beginPath();
+      //   ctx.moveTo(100, 100);
+      //   ctx.lineTo(200, 100);
+      //   ctx.strokeStyle = "red";
+      //   ctx.lineWidth = "5";
+      //   ctx.stroke();
+
+      //   实心矩形图
+      //   ctx.fillStyle = "pink"; //fill实心
+      //   ctx.fillRect(10, 10, 50, 50);
+
+      //   // 空心矩形图
+      //   ctx.strokeStyle = "red"; //stroke空心，也就是描边
+      //   ctx.lineWidth = 5;
+      //   //以左顶角为主 向四周画图
+      //   ctx.strokeRect(80, 10, 100, 100);
+
+      //   //   描边又实心的矩形图
+      //   //   1.先画一个边框矩形，里面再加一个实心矩形
+      //   ctx.lineWidth = 10;
+      //   ctx.strokeRect(200, 10, 100, 100);
+      //   ctx.fillRect(200, 10, 100, 100);
+
+      //   //   2.rect()先画一个矩形，再用fill填充
+      //   ctx.rect(320, 10, 100, 100);
+      //   ctx.stroke();
+      //   ctx.fill();
+
+      //   //绘制实心圆
+      //   ctx.beginPath();
+      //   ctx.lineWidth = 10;
+      //   //   150,200是圆心，80是半径，0是弧的起始角度，Math.PI * 2是弧的结束角度，true是逆时针，false顺时针
+      //   ctx.arc(150, 200, 80, 0, Math.PI * 2, true);
+      //   ctx.stroke();
+      //   ctx.fill();
+
+      //   //   绘制边框圆
+      //   ctx.beginPath();
+      //   ctx.lineWidth = 5;
+      //   ctx.arc(350, 400, 80, 0, Math.PI * 2, true);
+      //   ctx.stroke();
+
+      // 线性渐变的实现
+      // 1.竖着渐变 左上角到右上角的渐变
+      ctx.beginPath();
+      // 里面的值 左上角坐标x，y，右上角坐标x，y
+      const jb = ctx.createLinearGradient(100, 100, 300, 100);
+      jb.addColorStop(0, "red");
+      jb.addColorStop(0.5, "blue");
+      jb.addColorStop(1, "yellow");
+      //   设置颜色宽度形状
+      ctx.strokeStyle = jb;
+      ctx.lineWidth = 100;
+      ctx.moveTo(100, 100);
+      ctx.lineTo(300, 100);
+      ctx.stroke();
+    </script>
+  </body>
+</html>
