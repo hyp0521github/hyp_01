@@ -2,3 +2,5 @@
 canvas.js
 # 忽虐test文件夹里面的所有文件
 test/
+# 忽略 canvas.css文件
+canvas.css
