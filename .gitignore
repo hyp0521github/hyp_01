@@ -1,0 +1,4 @@
+# 忽略canvas.js文件
+canvas.js
+# 忽虐test文件夹里面的所有文件
+test/
